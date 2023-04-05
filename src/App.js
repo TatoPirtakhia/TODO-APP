@@ -2,22 +2,23 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
+import Footer from "./Footer";
 function App() {
   const [inputvalue, setinputValue] = useState("");
   const [tasks, setTasks] = useState([]);
   const [check, setCheck] = useState(false);
+  const [dark, setDark] = useState(false);
   const keyPress = (event) => {
     setinputValue(event.target.value);
   };
   const onkeyPress = (event) => {
     if (event.key === "Enter" && inputvalue != "") {
-     
       setTasks([
         ...tasks,
         {
           text: inputvalue,
           active: check,
-          id: tasks.length >0?tasks[tasks.length-1].id + 1:1,
+          id: tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1,
         },
       ]);
       setinputValue("");
@@ -37,15 +38,20 @@ function App() {
         value={inputvalue}
         makeChecked={makeChecked}
         check={check}
+        dark={dark}
+        setDark={setDark}
       />
-      <Main tasks={tasks} check={check} setCheck={setCheck} setTasks={setTasks} />
-      <Footer />
+      <Main
+        dark={dark}
+        setDark={setDark}
+        check={check}
+        setCheck={setCheck}
+        tasks={tasks}
+        setTasks={setTasks}
+      />
+      <Footer tasks={tasks} setTasks={setTasks} dark={dark} setDark={setDark} />
     </div>
   );
 }
 
 export default App;
-
-function Footer() {
-  return <div>footer</div>;
-}

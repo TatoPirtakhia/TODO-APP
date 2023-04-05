@@ -1,8 +1,17 @@
 .App {
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-header {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+.lightMode {
   background-image: url("../images/bg-mobile-light.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -13,7 +22,17 @@ header {
   align-items: center;
   flex-direction: column;
 }
-
+.darkMode {
+  background-image: url("../images/bg-mobile-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 200px;
+  padding-top: 48px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .todo_icon {
   display: flex;
   align-items: center;
@@ -30,11 +49,31 @@ header {
   gap: 12px;
   border-radius: 5px;
 }
+.check_input_dark {
+  width: 327px;
+  height: 48px;
+  background-color: rgba(37, 39, 61, 1);
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 5px;
+}
 .check {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 1px solid rgba(227, 228, 241, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.check_dark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(57, 58, 75, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,6 +85,13 @@ header {
   font-size: 15px;
   outline: none;
 }
+.input_dark {
+  border: none;
+  background-color: rgba(37, 39, 61, 1);
+  color: rgba(118, 121, 146, 1);
+  font-size: 15px;
+  outline: none;
+}
 .active {
   display: block;
   width: 20px;
@@ -54,56 +100,92 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(85, 221, 255, 1) 0% , rgba(192, 88, 243, 1) 100%);
+  background-image: linear-gradient(
+    rgba(85, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
 }
 
 .noActive {
   display: none;
 }
-.container{
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 35px 50px 15px rgba(194, 195, 214, 0.5);
+}
+.dark_container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-main{
-  margin-top: -20px ;
+main {
+  margin-top: -20px;
   border-radius: 5px;
   width: 327px;
   background-color: rgba(255, 255, 255, 1);
 }
-.box{
+.dark_main {
+  margin-top: -20px;
+  border-radius: 5px;
+  width: 327px;
+  background-color: rgba(37, 39, 61, 1);
+}
+.box {
   display: flex;
   align-items: center;
-  padding-left: 20px ;
+  padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-bottom:1px solid rgba(227, 228, 241, 1);
+  border-bottom: 1px solid rgba(227, 228, 241, 1);
+  gap: 12px;
+}
+.dark_box {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(57, 58, 75, 1);
   gap: 12px;
 }
 
-.components{
-   display: flex;
-   align-items: center;
-   padding-left: 20px;
-   gap: 140px ;
-   height: 50px;
+.components {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 140px;
+  height: 50px;
 }
 
-.items_left{
+.items_left {
   color: rgba(148, 149, 165, 1);
   font-size: 12px;
 }
-.button_clear{
+.items_left_dark {
+  color: rgba(91, 94, 126, 1);
+  font-size: 12px;
+}
+.button_clear {
   color: rgba(148, 149, 165, 1);
   background-color: rgba(255, 255, 255, 1);
   border: none;
+  cursor: pointer;
 }
-.ckecked_text{
+.button_clear_dark {
+  cursor: pointer;
+  background-color: rgba(37, 39, 61, 1);
+  color: rgba(91, 94, 126, 1);
+  color: rgba(91, 94, 126, 1);
+  border: none;
+}
+.ckecked_text {
   width: 215px;
   font-size: 15px;
-  color:rgba(209, 210, 218, 1);
-  text-align: center; 
-  text-decoration: line-through; 
+  color: rgba(77, 80, 103, 1);
+  text-align: center;
+  text-decoration: line-through;
   text-decoration-line: 1px;
   margin-right: 20px;
   word-wrap: break-word;
@@ -112,8 +194,21 @@ main{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.text{
+.ckecked_text_dark {
+  width: 215px;
+  font-size: 15px;
+  color: rgba(209, 210, 218, 1);
+  text-align: center;
+  text-decoration: line-through;
+  text-decoration-line: 1px;
+  margin-right: 20px;
+  word-wrap: break-word;
+  line-height: 20px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text {
   color: rgba(73, 76, 107, 1);
   font-size: 15px;
   width: 215px;
@@ -122,9 +217,76 @@ main{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.remove{
+.dark_text {
+  color: rgba(200, 203, 231, 1);
+  font-size: 15px;
+  width: 215px;
+  margin-right: 20px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.remove {
   cursor: pointer;
 }
-.button_clear{
+
+.footer {
+  margin-top: 16px;
+  width: 327px;
+  height: 48px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 35px 50px 15px rgba(194, 195, 214, 0.5);
+}
+.dark_footer {
+  margin-top: 16px;
+  width: 327px;
+  height: 48px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(37, 39, 61, 1);
+}
+.btn {
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+  color: rgba(148, 149, 165, 1);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.dark_btn {
+  background-color: rgba(37, 39, 61, 1);
+  border: none;
+  color: rgba(91, 94, 126, 1);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.drop_drag {
+  font-weight: 400;
+  color: rgba(148, 149, 165, 1);
+  margin-top: 40px;
+}
+.dark_drop_drak {
+  color: rgba(91, 94, 126, 1);
+  font-weight: 400;
+  margin-top: 40px;
+}
+
+.activeDark {
+  display: none;
+  cursor: pointer;
+}
+.activeLight {
+  display: block;
   cursor: pointer;
 }
