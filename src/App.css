@@ -181,9 +181,11 @@ main {
   border: none;
 }
 .ckecked_text {
+  font-family: "Josefin Sans", sans-serif;
   width: 215px;
+  font-weight: 400;
   font-size: 15px;
-  color: rgba(77, 80, 103, 1);
+  color: rgba(209, 210, 218, 1);
   text-align: center;
   text-decoration: line-through;
   text-decoration-line: 1px;
@@ -192,12 +194,12 @@ main {
   line-height: 20px;
   text-align: left;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
 }
 .ckecked_text_dark {
   width: 215px;
   font-size: 15px;
-  color: rgba(209, 210, 218, 1);
+  color: rgba(77, 80, 103, 1);
   text-align: center;
   text-decoration: line-through;
   text-decoration-line: 1px;
@@ -262,6 +264,7 @@ main {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
 }
 .dark_btn {
   background-color: rgba(37, 39, 61, 1);
@@ -270,6 +273,7 @@ main {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
 }
 .drop_drag {
   font-weight: 400;
@@ -289,4 +293,207 @@ main {
 .activeLight {
   display: block;
   cursor: pointer;
+}
+.main_filter{
+  display: none;
+}
+.button_clear_dark:hover{
+  color: rgba(227, 228, 241, 1);
+}
+.button_clear:hover{
+  color: rgba(73, 76, 107, 1);
+}
+@media (min-width: 1440px) {
+  .main_filter{
+    display: flex;
+    gap: 20px;
+  }
+  .components {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+    gap: 0px;
+    height: 50px;
+    padding-right: 24px;
+  }
+  .lightMode {
+    background-image: url("../images/bg-desktop-light.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 300px;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .darkMode {
+    background-image: url("../images/bg-desktop-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 300px;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .todo_icon {
+    display: flex;
+    align-items: center;
+    gap: 410px;
+    margin-bottom: 48px;
+  }
+  .check_input {
+    width: 540px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-radius: 5px;
+  }
+  .check_input_dark {
+    width: 540px;
+    height: 64px;
+    background-color: rgba(37, 39, 61, 1);
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-radius: 5px;
+  }
+  .check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(227, 228, 241, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .check_dark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(57, 58, 75, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .input {
+    border: none;
+    color: rgba(148, 149, 165, 1);
+    font-size: 18px;
+    outline: none;
+    width: 450px;
+  }
+  .input_dark {
+    border: none;
+    background-color: rgba(37, 39, 61, 1);
+    color: rgba(118, 121, 146, 1);
+    font-size: 18px;
+    outline: none;
+    width: 450px;
+  }
+  .active {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+      rgba(85, 221, 255, 1) 0%,
+      rgba(192, 88, 243, 1) 100%
+    );
+  }
+
+  main {
+    margin-top: -70px;
+    border-radius: 5px;
+    width: 540px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .dark_main {
+    margin-top: -70px;
+    border-radius: 5px;
+    width: 540px;
+    background-color: rgba(37, 39, 61, 1);
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(227, 228, 241, 1);
+    gap: 25px;
+  }
+  .dark_box {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(57, 58, 75, 1);
+    gap: 25px;
+  }
+  .ckecked_text {
+    font-family: "Josefin Sans", sans-serif;
+    width: 350px;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(209, 210, 218, 1);
+    text-align: center;
+    text-decoration: line-through;
+    text-decoration-line: 1px;
+    margin-right: 60px;
+    word-wrap: break-word;
+    line-height: 20px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ckecked_text_dark {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    width: 350px;
+    font-size: 18px;
+    color: rgba(77, 80, 103, 1);
+    text-align: center;
+    text-decoration: line-through;
+    text-decoration-line: 1px;
+    margin-right: 60px;
+    word-wrap: break-word;
+    line-height: 20px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text {
+    color: rgba(73, 76, 107, 1);
+    font-size: 18px;
+    width: 350px;
+    margin-right: 60px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dark_text {
+    color: rgba(200, 203, 231, 1);
+    font-size: 18px;
+    width: 350px;
+    margin-right: 60px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

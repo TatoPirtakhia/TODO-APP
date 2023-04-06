@@ -8,6 +8,12 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [check, setCheck] = useState(false);
   const [dark, setDark] = useState(false);
+  const Actives = tasks.filter((element) => !element.active);
+  const Completed = tasks.filter((element) => element.active);
+  const All = tasks;
+  const [active, setActive] = useState(false);
+  const [completed, setCompleted] = useState(false);
+  const [all, setAll] = useState(true);
   const keyPress = (event) => {
     setinputValue(event.target.value);
   };
@@ -46,10 +52,25 @@ function App() {
         setDark={setDark}
         check={check}
         setCheck={setCheck}
-        tasks={tasks}
+        tasks={all ? All : active ? Actives : completed ? Completed : ""}
         setTasks={setTasks}
+        all={all}
+        setAll={setAll}
+        active={active}
+        setActive={setActive}
+        completed={completed}
+        setCompleted={setCompleted}
       />
-      <Footer tasks={tasks} setTasks={setTasks} dark={dark} setDark={setDark} />
+      <Footer
+        tasks={tasks}
+        dark={dark}
+        all={all}
+        setAll={setAll}
+        active={active}
+        setActive={setActive}
+        completed={completed}
+        setCompleted={setCompleted}
+      />
     </div>
   );
 }
