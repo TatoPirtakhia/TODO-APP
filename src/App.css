@@ -346,6 +346,9 @@ main {
 .btn:hover{
   color: rgba(73, 76, 107, 1);
 }
+.dark_btn:hover{
+  color: rgba(227, 228, 241, 1);
+}
 @media (min-width: 1440px) {
   .dark_drop_drak_desktop {
     display: block;
