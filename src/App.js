@@ -52,7 +52,8 @@ function App() {
         setDark={setDark}
         check={check}
         setCheck={setCheck}
-        tasks={all ? All : active ? Actives : completed ? Completed : ""}
+        Tasks={tasks}
+        tasks={all ? All : active ? Actives : completed ? Completed.length>0 ? Completed : All :''}
         setTasks={setTasks}
         all={all}
         setAll={setAll}
