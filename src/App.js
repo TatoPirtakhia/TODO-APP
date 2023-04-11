@@ -53,7 +53,7 @@ function App() {
         check={check}
         setCheck={setCheck}
         Tasks={tasks}
-        tasks={all ? All : active ? Actives : completed ? Completed.length>0 ? Completed : All :''}
+        tasks={all ? All : active ? Actives.length>0? Actives : All : completed ? Completed.length>0 ? Completed : All :''}
         setTasks={setTasks}
         all={all}
         setAll={setAll}
